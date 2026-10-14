@@ -1,6 +1,6 @@
 export const profile = {
   name: "Bryan Simeon Uceda",
-  role: "Fullstack Developer",
+  role: "Fullstack Developer · QA",
   location: "Lima, Peru",
   email: "bryansonva2018@gmail.com",
   github: "https://github.com/bryansimeon08",
@@ -8,7 +8,52 @@ export const profile = {
   instagram: "https://www.instagram.com/br.simeon/",
 };
 
-export const achievements = [
+export const aybarAchievements = [
+  {
+    id: "pr-certification",
+    tag: "Certificación",
+    title: "86 informes de certificación sobre 28 PRs",
+    description:
+      "Revisé el código y ejecuté pruebas de regresión de cada pull request de 7 equipos antes de su pase a producción, con informes de veredicto y retest que clasifican los defectos por severidad y causa raíz. Medí cobertura y apliqué mutation testing para detectar pruebas que no validaban el código.",
+  },
+  {
+    id: "e2e",
+    tag: "Automatización E2E",
+    title: "32 casos E2E con Playwright",
+    description:
+      "Escribí casos E2E contra el sistema real, trazados a historias de usuario y criterios de aceptación, y pruebas con Selenium WebDriver sobre el frontend y la API de Nexora.",
+  },
+  {
+    id: "security",
+    tag: "Seguridad",
+    title: "IDOR y XSS detectados antes de producción",
+    description:
+      "Detecté fallos de autorización (IDOR, estado manipulable desde el navegador) y XSS antes de llegar a producción. Hice escaneo de secretos y barridos de datos personales en código, historial de git y capturas.",
+  },
+  {
+    id: "ci-cd",
+    tag: "CI/CD",
+    title: "Quality gates en el pipeline",
+    description:
+      "Añadí validaciones al pipeline que bloquean un PR con variables de entorno no declaradas (Pest, Jest, pytest) y monté SonarQube para los quality gates.",
+  },
+  {
+    id: "qa-mirror",
+    tag: "API testing / Cloud Run",
+    title: "Espejo local del ambiente de QA",
+    description:
+      "Monté 5 servicios con Docker, MySQL, Redis y PostgreSQL para probar la autenticación entre APIs y validar la configuración antes de desplegar en Google Cloud Run.",
+  },
+  {
+    id: "ai",
+    tag: "IA aplicada",
+    title: "Agentes LLM y QA automatizado con IA",
+    description:
+      "Certifiqué la integración de un agente LLM sobre Vertex AI (configuración, credenciales rechazadas e instrucciones al modelo) y desarrollé agentes y skills de Claude Code que generan planes de prueba, mutaciones e informes.",
+  },
+] as const;
+
+export const maxillarisAchievements = [
   {
     id: "idempotency",
     tag: "Agenda",
@@ -103,27 +148,72 @@ export const achievements = [
   },
 ] as const;
 
-export const experienceMeta = {
-  role: "Fullstack Developer",
-  company: "Maxillaris",
-  type: "Trabajo actual",
-  period: "Enero 2026 - Actualidad",
-  location: "Lima, Peru",
-  summary:
-    "Mantengo y extiendo 8 servicios NestJS que corren el negocio completo de una clinica multisede: desde el CRM que factura en tiempo real hasta las colas que sincronizan cobranzas entre 3 sedes sin perder una transaccion.",
-  stack: [
-    "NestJS",
-    "TypeORM",
-    "PostgreSQL",
-    "React",
-    "TypeScript",
-    "Zustand",
-    "WebSockets",
-    "BullMQ",
-    "MinIO",
-    "DocuSeal",
-  ],
-};
+export const experiences = [
+  {
+    id: "aybar",
+    role: "Analista de Calidad (QA)",
+    company: "Aybar Corp",
+    type: "Trabajo actual",
+    period: "Agosto 2026 - Actualidad",
+    location: "Lima, Perú",
+    summary:
+      "Calidad y desarrollo de los sistemas corporativos: ERP (Laravel/Livewire), Sistema Legal (NestJS/React) y un Agente Legal con IA (FastAPI, Vertex AI). Además de certificar el trabajo de 7 equipos, integré 34 pull requests propios (más de 450 commits) con correcciones y funcionalidades: login con Google, Google Calendar y recordatorios en Nexora, y fixes con pruebas Pest en el ERP.",
+    stack: [
+      "Laravel",
+      "PHP",
+      "Pest",
+      "NestJS",
+      "React",
+      "Python",
+      "FastAPI",
+      "Playwright",
+      "Selenium",
+      "Jest",
+      "pytest",
+      "Docker",
+      "Cloud Run",
+      "Vertex AI",
+      "SonarQube",
+      "GitHub Actions",
+    ],
+    achievements: aybarAchievements,
+  },
+  {
+    id: "maxillaris",
+    role: "Fullstack Developer",
+    company: "Maxillaris",
+    type: null,
+    period: "Enero 2026 - Agosto 2026",
+    location: "Lima, Perú",
+    summary:
+      "Desarrollé en la mayoría de los sistemas internos de una clínica multisede (CRM de ventas, agenda, cobranzas, comisiones, facturación electrónica y panel administrativo), cubriendo backend y frontend, con más de 400 pull requests mergeados a producción en 8 repositorios.",
+    stack: [
+      "NestJS",
+      "TypeORM",
+      "PostgreSQL",
+      "React",
+      "TypeScript",
+      "Zustand",
+      "WebSockets",
+      "BullMQ",
+      "MinIO",
+      "DocuSeal",
+    ],
+    achievements: maxillarisAchievements,
+  },
+  {
+    id: "necomplus",
+    role: "Soporte Técnico",
+    company: "Necomplus",
+    type: null,
+    period: "Enero 2024 - Junio 2024",
+    location: "Lima, Perú",
+    summary:
+      "Diagnostiqué y resolví incidencias técnicas de software mediante un sistema de tickets, coordinando con otras áreas para resolver problemas complejos.",
+    stack: [],
+    achievements: [],
+  },
+] as const;
 
 export const projects = [
   {
@@ -167,28 +257,42 @@ export const projects = [
     href: null,
     repo: "https://github.com/IHenrix/proyectoFrontendBaseDatosII",
   },
-  {
-    id: "futbol",
-    name: "Web equipo de futbol",
-    type: "Proyecto academico",
-    period: "2024",
-    bullets: [
-      "Sitio estatico con HTML5, CSS3 y JavaScript vanilla, sin frameworks.",
-      "Catalogo de productos simulando un flujo de checkout basico, con maquetacion responsive.",
-    ],
-    stack: ["HTML5", "CSS3", "JavaScript"],
-    href: null,
-    repo: "https://github.com/bryanSimeon08/web-equipo-futbol",
-  },
 ] as const;
 
 export const skillGroups = [
   {
+    title: "Calidad y pruebas",
+    items: [
+      "E2E con Playwright y Selenium",
+      "API testing",
+      "Unitarias e integración (Pest, Jest, pytest)",
+      "Regresión, mutation testing y cobertura",
+    ],
+  },
+  {
+    title: "Seguridad",
+    items: [
+      "Control de acceso e IDOR",
+      "XSS",
+      "Escaneo de secretos (gitleaks, detect-secrets)",
+      "Barridos de PII y SonarQube",
+    ],
+  },
+  {
+    title: "Nube, DevOps e IA",
+    items: [
+      "Google Cloud (Cloud Run, Storage, Vertex AI)",
+      "Docker y GitHub Actions",
+      "Agentes y skills de Claude Code para QA",
+      "Integración de LLM con Vertex AI",
+    ],
+  },
+  {
     title: "Concurrencia y confiabilidad",
     items: [
-      "Idempotencia con IDs de correlacion",
+      "Idempotencia con IDs de correlación",
       "Transacciones (@Transactional)",
-      "Colas asincronas (BullMQ)",
+      "Colas asíncronas (BullMQ)",
       "Migraciones versionadas (TypeORM)",
     ],
   },
@@ -196,7 +300,7 @@ export const skillGroups = [
     title: "Integraciones",
     items: [
       "MinIO (storage, URLs prefirmadas)",
-      "DocuSeal (firma electronica)",
+      "DocuSeal (firma electrónica)",
       "WebSockets / Socket.IO",
       "WhatsApp API",
     ],
@@ -205,9 +309,9 @@ export const skillGroups = [
     title: "Performance",
     items: [
       "Refactor de queries SQL",
-      "Memoizacion y debounce en React",
+      "Memoización y debounce en React",
       "Hooks de caching",
-      "Optimizacion de renders",
+      "Optimización de renders",
     ],
   },
 ] as const;
@@ -222,7 +326,13 @@ export const techStack = [
   "Spring Boot",
   "Node.js",
   "Express",
+  "Laravel",
+  "PHP",
+  "Python",
+  "FastAPI",
   "PostgreSQL",
+  "MySQL",
+  "Redis",
   "Supabase",
   "TypeORM",
   "WebSockets",
@@ -230,6 +340,17 @@ export const techStack = [
   "MinIO",
   "Zustand",
   "Tailwind CSS",
+  "Playwright",
+  "Selenium",
+  "Jest",
+  "Pest",
+  "pytest",
+  "SonarQube",
+  "Docker",
+  "Google Cloud",
+  "Vertex AI",
+  "GitHub Actions",
+  "Claude Code",
   "Git",
   "GitHub",
   "Jira",
@@ -260,3 +381,5 @@ export const certifications = [
     year: "2023",
   },
 ] as const;
+
+export const languages = [{ name: "Inglés", level: "Básico" }] as const;

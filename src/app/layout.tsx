@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bryan Simeon — Fullstack Developer",
+  title: "Bryan Simeon — Fullstack Developer · QA",
   description:
-    "Fullstack developer construyendo sistemas empresariales completos: CRM, agendas, cobranzas y plataformas en tiempo real, de extremo a extremo.",
+    "Fullstack developer y analista QA: sistemas empresariales completos (CRM, agendas, cobranzas, tiempo real) entregados con pruebas automatizadas, revisión de seguridad y despliegue verificado.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

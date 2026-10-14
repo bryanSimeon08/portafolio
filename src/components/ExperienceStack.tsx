@@ -2,7 +2,6 @@
 
 import { useReducedMotion } from "motion/react";
 import ScrollStack, { ScrollStackItem } from "./ScrollStack";
-import { achievements } from "@/lib/content";
 
 const cardClass =
   "rounded-2xl border border-border bg-surface p-8 sm:p-10 flex flex-col justify-center gap-4";
@@ -17,7 +16,9 @@ function CardContent({ tag, title, description }: { tag: string; title: string; 
   );
 }
 
-export function ExperienceStack() {
+type Achievement = { id: string; tag: string; title: string; description: string };
+
+export function ExperienceStack({ achievements }: { achievements: readonly Achievement[] }) {
   const reduce = useReducedMotion();
 
   if (reduce) {

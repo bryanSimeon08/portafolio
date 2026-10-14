@@ -104,9 +104,9 @@ export function Hero() {
           transition={{ duration: 0.6, delay: reduce ? 0 : 0.7 }}
           className="mt-7 max-w-[48ch] text-lg leading-relaxed text-muted"
         >
-          Fullstack developer enfocado en sistemas confiables: arquitecturas en
-          tiempo real, integraciones complejas y bases de datos que no fallan
-          bajo carga.
+          Fullstack developer y analista QA enfocado en sistemas confiables:
+          construyo funcionalidades de extremo a extremo y las entrego con
+          pruebas automatizadas, revisión de seguridad y despliegue verificado.
         </motion.p>
 
         <motion.div

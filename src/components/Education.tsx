@@ -1,5 +1,5 @@
 import { SectionHeading } from "./SectionHeading";
-import { certifications, education } from "@/lib/content";
+import { certifications, education, languages } from "@/lib/content";
 
 export function Education() {
   return (
@@ -26,6 +26,25 @@ export function Education() {
             <span className="mt-3 inline-block rounded-full border border-border px-3 py-1 font-mono text-xs text-accent">
               {education.status}
             </span>
+          </div>
+
+          <h3 className="mt-12 font-mono text-xs tracking-wide text-muted-2 uppercase">
+            Idiomas
+          </h3>
+          <div className="mt-5 flex flex-col gap-2">
+            {languages.map((lang) => (
+              <div
+                key={lang.name}
+                className="flex items-baseline justify-between gap-4"
+              >
+                <h4 className="text-sm font-medium text-foreground">
+                  {lang.name}
+                </h4>
+                <span className="font-mono text-xs text-muted-2">
+                  {lang.level}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
 
